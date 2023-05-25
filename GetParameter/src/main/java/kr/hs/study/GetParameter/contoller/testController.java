@@ -1,7 +1,9 @@
 package kr.hs.study.GetParameter.contoller;
 
+import kr.hs.study.GetParameter.dto.test6;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
@@ -68,6 +70,20 @@ public class testController {
         for(String str:data3){
             System.out.println("data3 : " + str);
         }
+
+        return "result";
+    }
+
+    @GetMapping("/test6")
+    public String test6(@ModelAttribute test6 t){
+        //@ModelAttribute test6 t
+        //부트가 test6객체 t를 만들고
+        //사용자의 데이터를 set메서드를 이용해서 멤버변수에 넣는다. -> Boot가 해줌.
+        //출력
+
+        System.out.println("data1 : "+t.getData1());
+        System.out.println("data2 : "+t.getData2());
+        System.out.println("data3 : "+t.getData3());
 
         return "result";
     }
