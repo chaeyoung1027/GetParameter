@@ -1,6 +1,7 @@
 package kr.hs.study.GetParameter.contoller;
 
 import kr.hs.study.GetParameter.dto.test6;
+import kr.hs.study.GetParameter.dto.test7;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -86,5 +87,12 @@ public class testController {
         System.out.println("data3 : "+t.getData3());
 
         return "result";
+    }
+
+    @GetMapping("/test7")
+    public String test7(@ModelAttribute test7 t){
+        System.out.println("id : "+t.getId());
+        System.out.println("password : "+t.getPassword());
+        return "login.html";
     }
 }
